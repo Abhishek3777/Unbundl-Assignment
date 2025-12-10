@@ -1,0 +1,803 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Figtree', sans-serif;
+}
+
+/* NAVBAR IMAGE */
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #FFF9F5;
+}
+
+/* LOGO */
+.logo {
+    height: 55px;
+    object-fit: contain;
+}
+
+/* RIGHT SIDE BUTTONS */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* BOOK APPOINTMENT BUTTON */
+.book-btn {
+    background: #F8943F;
+    color: white;
+    padding: 10px 22px;
+    font-size: 15px;
+    border: none;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* PHONE BUTTON */
+.number-btn {
+    background: white;
+    color: #000;
+    padding: 10px 22px;
+    font-size: 15px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1.5px solid #E8D9CE;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Icons in buttons */
+.book-btn img,
+.number-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 14px 18px;
+        /* Reduce padding */
+    }
+
+    .logo {
+        height: 40px;
+        /* Smaller logo */
+    }
+
+    .navbar-right {
+        gap: 10px;
+    }
+
+    /* HIDE the Book Appointment button on mobile 
+       (in the expected design only the phone button shows)
+    */
+    .book-btn {
+        display: none;
+    }
+
+    /* Phone button becomes compact */
+    .number-btn {
+        max-width: 120px;
+        /* forces shrink */
+        padding: 6px 10px;
+        /* smaller padding */
+        font-size: 12px;
+        /* smaller text */
+        white-space: nowrap;
+        /* text stays in one line */
+        overflow: hidden;
+    }
+
+    .number-btn img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 60px;
+    background: #FFF9F4;
+}
+
+/* LEFT SIDE */
+.hero-left {
+    flex: 0 0 60%;
+}
+
+.hero-image-wrapper {
+    position: relative;
+}
+
+.doctor-img {
+    width: 100%;
+    height: 420px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* OVERLAY */
+.hero-overlay {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    padding: 20px 25px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.hero-overlay h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cta-overlay {
+    margin-top: 10px;
+    background: #f8943f;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+/* RIGHT FORM CARD */
+.hero-right {
+    flex: 0 0 40%;
+    background: FFF9F4;
+    padding: 35px;
+    border-radius: 25px;
+}
+
+.hero-right h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.hero-right input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    font-size: 15px;
+}
+
+/* CAPTCHA */
+.captcha-box {
+    display: flex;
+}
+
+.captcha-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.captcha-value {
+    background: #462512;
+    color: white;
+    padding: 17px 16px 17px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    width: 110px;
+    height: 38px;
+    gap: 10px;
+}
+
+/* CHECKBOX */
+.checkbox-row {
+    font-size: 14px;
+    display: flex;
+    align-items: left;
+    justify-content: flex-start;
+    gap: 6px;
+    margin: 12px 0;
+}
+
+/* BUTTON */
+.cta-primary {
+    background-color: #F8943F;
+    padding: 12px 18px;
+    border-radius: 50px;
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* STATS ROW IMAGE */
+.stats-img-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFF9F4;
+    gap: 20px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+    /* STACK hero vertically */
+    .hero {
+        display: block;
+        /* instead of flex/grid */
+        padding: 0;
+    }
+
+    /* IMAGE: full width and taller */
+    .doctor-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        /* fills the width nicely */
+        border-radius: 0;
+    }
+
+    /* SHOW overlay text (if you want it mobile like the expected UI) */
+    .hero-overlay {
+        position: absolute;
+        bottom: 20px;
+        left: 16px;
+        right: 16px;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 16px;
+        border-radius: 12px;
+        backdrop-filter: blur(6px);
+    }
+
+    /* HIDE form on mobile — not present in expected UI */
+    .hero-right {
+        display: none;
+    }
+}
+
+/* ========================= */
+/* SECTION 2 – TREATMENTS    */
+/* ========================= */
+
+.treatments-section {
+    width: 100%;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.treatments-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.treatments-header p {
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.treatment-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 40px;
+}
+
+.treatment-card {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 430px;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.treatment-img {
+    width: 120px;
+    height: auto;
+}
+
+.treatment-content h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.treatment-content p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.treatment-content ul {
+    text-align: left;
+    margin-bottom: 10px;
+    padding-left: 18px;
+}
+
+.treatments-section .starting-price {
+    font-weight: 600;
+    font-style: bold;
+    font-size: 14px;
+    color: #F58420;
+}
+
+.treatments-section .types-rct {
+    font-weight: 700;
+    font-style: bold;
+    color: #000000;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.price {
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.cta-orange {
+    background: #ff8800;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .treatment-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .treatment-card {
+        width: 90%;
+    }
+}
+
+/* section3 Real Smiles, Real Transformations */
+/* SECTION 3 — Real Smiles */
+/* MINOR PATCH — gallery two-cols desktop, single-col mobile, consistent image sizing */
+.smile-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    /* slightly tighter gap */
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* make each item behave like a responsive card */
+.smile-item {
+    width: calc(50% - 12px);
+    /* two columns (half minus half-gap) */
+    max-width: 440px;
+    /* prevents cards from growing too wide on large screens */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* consistent visual height and crop for faces */
+.smile-item img {
+    width: 100%;
+    height: 260px;
+    /* consistent visual height for cards */
+    object-fit: cover;
+    /* crops to fill while keeping aspect */
+    border-radius: 12px;
+    display: block;
+}
+
+/* captions */
+.smile-item h4 {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.smile-item span {
+    font-size: 14px;
+    color: #777;
+}
+
+/* MOBILE: stack single column */
+@media (max-width: 720px) {
+    .smile-gallery {
+        gap: 18px;
+    }
+
+    .smile-item {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    .smile-item img {
+        height: 300px;
+        /* slightly taller on mobile for stronger visual */
+        width: 92%;
+        /* breathing space from edges */
+    }
+}
+
+
+/* Section 4 Why choose clove dental */
+.choose-clove-section {
+    padding: 60px 0;
+}
+
+.choose-clove-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.choose-clove-title h2 {
+    font-size: 29px;
+    font-weight: 700;
+    font-style: bold;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+
+.choose-clove-title p {
+    color: #555;
+}
+
+/* Main flex layout */
+.choose-clove-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 0 40px;
+}
+
+/* FEATURES LIST (LEFT SIDE) */
+/* .faq-section .faq-title{
+    font-weight: 700;
+    font-style: bold;
+    font-size: 24px;
+    line-height: 130%;
+    color: #303030;
+    font-style:'Figtre'
+} */
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 600;
+    width: 629px
+}
+
+.plus {
+    color: #EA7D28;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* RIGHT SIDE IMAGE */
+.choose-clove-img img {
+    width: 380px;
+    border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .choose-clove-main {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 30px;
+        text-align: left;
+        /* expected UI does NOT center text */
+    }
+
+    .feature-item {
+        width: 100%;
+        font-size: 15px;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        /* optional, looks cleaner */
+    }
+
+    /* Make + symbol consistent */
+    .plus {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    /* Image full-width on mobile */
+    .choose-clove-img img {
+        width: 100%;
+        max-width: 380px;
+        border-radius: 12px;
+        margin: 0 auto;
+        /* centers nicely */
+        display: block;
+    }
+}
+
+/* =============================== */
+/* SECTION 5 — PATIENT TESTIMONIALS */
+/* =============================== */
+
+.patients-review {
+    padding: 60px 0;
+}
+
+.patients-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.patients-title h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.patients-title p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* IMAGE LIST WRAPPER */
+.patients-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* allows rows on mobile */
+    gap: 30px;
+}
+
+/* EACH CARD */
+.testimonial-card {
+    text-align: left;
+    width: 224px;
+    /* Figma exact width */
+}
+
+/* IMAGE */
+.testimonial-card img {
+    width: 224px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* TEXT CONTAINER */
+.info {
+    margin-top: 10px;
+}
+
+/* NAME + TREATMENT (left + right) */
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-row h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    color: #222;
+}
+
+/* TREATMENT TAG */
+.treatment {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ff8a00;
+    /* Figma orange */
+}
+
+/* CITY */
+.city {
+    margin-top: 2px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+
+    .patients-images {
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        width: 45%;
+        padding: 0 10px;
+        /* two per row on medium screens */
+    }
+
+    .testimonial-card img {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .top-row {
+        justify-content: flex-start;
+        gap: 40px;
+    }
+
+    .patients-images {
+        gap: 20px;
+    }
+
+    .testimonial-card img {
+        width: 180px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .top-row {
+        justify-content: flex-start;
+        gap: 20px;
+        /* spacing between name and treatment */
+    }
+
+    .testimonial-card {
+        width: 100%;
+        /* ONE card per row */
+    }
+
+    /* LAST TWO CARDS SIDE BY SIDE (your requirement) */
+    .testimonial-card:nth-last-child(2),
+    .testimonial-card:last-child {
+        width: 48%;
+    }
+
+    .patients-images {
+        justify-content: flex-start;
+    }
+
+    .testimonial-card img {
+        height: 260px;
+    }
+}
+
+/* section 6 footer */
+.faq-section {
+    padding: 60px 0;
+}
+
+.faq-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.faq-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 0 60px;
+
+}
+
+.faq-column {
+    width: 450px;
+}
+
+.faq-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.faq-item .question {
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+    font-family: 'Inter', sans-serif;
+}
+
+.faq-item .plus {
+    color: #ff8a00;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@media (max-width:900px) {
+    .faq-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .faq-column {
+        width: 100%;
+    }
+}
+
+/* footer part 2 */
+.footer-part2 {
+    background-color: #462512;
+    color: #ffffff;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    /* ← pushes right side to right */
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Right side block */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* ← aligns text to the right */
+    gap: 10px;
+}
+
+/* Top policy links */
+.terms-policy {
+    display: flex;
+    gap: 25px;
+}
+
+/* Divider line */
+.line {
+    width: 100%;
+    border-top: 1px solid #ffffff;
+}
+
+/* Copyright text */
+.rights-reserved {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: right;
+    display: flex;
+    flex-wrap: nowrap;
+    /* ← aligns copyright text right */
+    max-width: 600px;
+}
